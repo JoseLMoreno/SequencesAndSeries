@@ -25,8 +25,8 @@ int main()
 	//secondSequence();
 	//thirdSequence();
 	//fourthSequence();
-	firstSeries();
-	//secondSeries();
+	//firstSeries();
+	secondSeries();
 	return 0;
 }
 
@@ -145,31 +145,35 @@ void firstSeries()
 	double two = 2.0;
 	double three = 3.0;
 
-	//first five 
+	//partila sum for 5
 	for (long double n = 1, x = 0; n <= 5; n++)
 	{
 		x = pow(two / three, n + 2.0);
-		cout << x << endl;
+		cout << pow(two, n + 2) << '/' << pow(three, n + 2);
+		if (n < 5)
+			cout << " + ";
 	}
-	cout << endl;
+	cout << endl << endl;
 
-	//first ten
+	//partial sum for 10th
 	for (long double n = 1, x = 0; n <= 10; n++)
 	{
-		x = pow(two / three, n + 2.0);
-		cout << x << endl;
+		cout << pow(two, n + 2) << '/' << pow(three, n + 2);
+		if (n < 10)
+			cout << " + ";
 	}
-	cout << endl;
+	cout << endl << endl;
 
-	//first twenty
+	//partial sum for 20th
 	for (long double n = 1, x = 0; n <= 20; n++)
 	{
-		x = pow(two / three, n + 2.0);
-		cout << x << endl;
+		cout << pow(two, n + 2) << '/' << pow(three, n + 2);
+		if (n < 20)
+			cout << " + ";
 	}
-	cout << endl;
+	cout << endl << endl;
 
-	//first five partial sums
+	//first five values for series
 	for (long double n = 1, x = 0; n <= 5; n++)
 	{
 		x = x + pow(two/three, n + 2.0);
@@ -177,7 +181,7 @@ void firstSeries()
 	}
 	cout << endl;
 
-	//first ten partial sums
+	//first ten values for series
 	for (long double n = 1, x = 0; n <= 10; n++)
 	{
 		x = x + pow(two / three, n + 2.0);
@@ -196,8 +200,31 @@ void firstSeries()
 
 void secondSeries()
 {
-	double two = 2.0;
-	double three = 3.0;
+	//first five sequence
+	for (long double n = 1, x = 0; n <= 5; n++)
+	{
+		x = (1 / ((n + 2) * (n + 3)));
+		cout << x << endl;
+	}
+	cout << endl;
+
+	//first ten sequence
+	for (long double n = 1, x = 0; n <= 10; n++)
+	{
+		x = (1 / ((n + 2) * (n + 3)));
+		cout << x << endl;
+	}
+	cout << endl;
+
+	//first twenty sequence
+	for (long double n = 1, x = 0; n <= 20; n++)
+	{
+		x = (1 / ((n + 2) * (n + 3)));
+		cout << x << endl;
+	}
+	cout << endl;
+
+	//first five partial sums
 	for (long double n = 1, x = 0; n <= 5; n++)
 	{
 		x = x + (1/((n+2) * (n+3)));
@@ -205,6 +232,7 @@ void secondSeries()
 	}
 	cout << endl;
 
+	//first ten partial sums
 	for (long double n = 1, x = 0; n <= 10; n++)
 	{
 		x = x + (1 / ((n + 2) * (n + 3)));
@@ -212,10 +240,26 @@ void secondSeries()
 	}
 	cout << endl;
 
+	//first twenty partial sums
 	for (long double n = 1, x = 0; n <= 20; n++)
 	{
 		x = x + (1 / ((n + 2) * (n + 3)));
 		cout << x << endl;
+	}
+	cout << endl;
+
+	//first twenty partial sums formatted for paper instead of plotting
+	//first twenty partial sums
+	for (long double n = 1, x = 0; n <= 20; n++)
+	{
+		x = x + (1 / ((n + 2) * (n + 3)));
+		if (n == 1)
+			cout << "{ ";
+		cout << x;
+		if (n < 20)
+			cout << ", ";
+		else
+			cout << " }";
 	}
 	cout << endl;
 }
